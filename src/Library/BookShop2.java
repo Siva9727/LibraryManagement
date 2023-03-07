@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.UUID;
 
 public class BookShop2 {
-    private HashMap<UUID,Book> table1;
+    private final HashMap<UUID,Book> table1;
 
     public BookShop2() {
         this.table1 = new HashMap<>();
