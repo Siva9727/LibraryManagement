@@ -24,11 +24,11 @@ public class Book {
     }
 
     public void display(){
-        System.out.println("title: "+this.title);
-        System.out.println();
-        System.out.println("author: " +this.author);
-        System.out.println();
-        System.out.println("Year of Publish: " + this.yearOfPublish);
+        System.out.print("title: "+this.title);
+//        System.out.println();
+        System.out.print("--> author: " +this.author);
+//        System.out.println();
+        System.out.print("-->Year of Publish: " + this.yearOfPublish);
         System.out.println();
     }
 

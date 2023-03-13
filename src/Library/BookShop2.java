@@ -1,8 +1,6 @@
 package Library;
 
-import java.util.HashMap;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 public class BookShop2 {
     private final HashMap<UUID,Book> table1;
@@ -27,5 +25,21 @@ public class BookShop2 {
 
         }
         return null;
+    }
+    // to remove books
+    public void removeBooks(String author, String title) {
+        Set<UUID> key = table1.keySet();
+
+        for (UUID k : key) {
+            Book a = table1.get(k);
+            if (a.getAuthor().equalsIgnoreCase(author) && a.getTitle().equalsIgnoreCase(title)) {
+                table1.remove(k);
+                return;
+            }
+        }
+    }
+
+    public List<Book> getAllBooks(){
+        return new ArrayList<>(table1.values());
     }
 }

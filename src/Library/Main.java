@@ -1,13 +1,16 @@
 package Library;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    static Scanner in = new Scanner(System.in);
+
+    static BookShop2 a = new BookShop2();
     public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
-
-        BookShop2 a = new BookShop2();
+        
 
         // Added Books in bookshop
 
@@ -29,6 +32,35 @@ public class Main {
 
 //        a.addBooks("To Kill a Mockingbird","Harper Lee",1960);
 
+
+        System.out.println("Type 1 for search, 2 for view and 3 for filter");
+
+        int option = in.nextInt();
+
+        switch (option) {
+            case 1 -> search();
+            case 2 -> viewAllBooks();
+            case 3 -> sorted();
+        }
+
+
+
+
+    }
+
+    public static void sorted() {
+        List<Book> result = a.getAllBooks();
+        if (result.isEmpty()){
+            System.out.println("Nothing to sort");
+        }
+        else {
+
+        }
+    }
+
+    public static void search() {
+//        BookShop2 a = new BookShop2();
+//        Scanner in = new Scanner(System.in);
         System.out.println("Title of the Book ?");
         String title = in.nextLine();
         System.out.println();
@@ -46,6 +78,21 @@ public class Main {
         }
         else {
             System.out.println("Above mentioned book is not available");
+        }
+    }
+
+
+
+    public static void viewAllBooks(){
+        
+        List<Book> result = a.getAllBooks();
+        if (result.isEmpty()){
+            System.out.println("No book is available");
+        }
+        else {
+            for (Book n: result) {
+                n.display();
+            }
         }
 
     }
