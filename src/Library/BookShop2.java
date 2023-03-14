@@ -42,4 +42,6 @@ public class BookShop2 {
     public List<Book> getAllBooks(){
         return new ArrayList<>(table1.values());
     }
+
+
 }
