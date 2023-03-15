@@ -4,22 +4,23 @@ import java.util.HashMap;
 
 public class BookShop {
 
-    private final HashMap<String,Book> table;
-    public BookShop(){
+    private final HashMap<String, Book> table;
+
+    public BookShop() {
         this.table = new HashMap<>();
     }
     // to add book in library
 
-    public void addBooks(String title, String author, int year){
-        Book book = new Book(title,author,year);
-        table.putIfAbsent(book.getTitle().toLowerCase(),book);
+    public void addBooks(String title, String author, int year) {
+        Book book = new Book(title, author, year);
+        table.putIfAbsent(book.getTitle().toLowerCase(), book);
     }
 
-    public Book getBooks(String title, String author){
+    public Book getBooks(String title, String author) {
         String k = title.toLowerCase();
-        if (table.containsKey(k)){
+        if (table.containsKey(k)) {
             Book book = table.get(k);
-            if (book.getAuthor().equalsIgnoreCase(author)){
+            if (book.getAuthor().equalsIgnoreCase(author)) {
                 return book;
             }
         }
